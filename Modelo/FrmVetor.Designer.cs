@@ -30,12 +30,15 @@
         {
             this.txtResultado = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEntrada = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOrdenar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnBuscaBinaria = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +67,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(968, 177);
             this.panel2.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Modelo.Properties.Resources.close;
+            this.button1.Location = new System.Drawing.Point(850, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 80);
+            this.button1.TabIndex = 18;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -96,7 +112,7 @@
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(105, 44);
             this.btnCalcular.TabIndex = 15;
-            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.Text = "Gerar";
             this.btnCalcular.UseVisualStyleBackColor = true;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click_1);
             // 
@@ -117,18 +133,41 @@
             this.txtEntrada.Size = new System.Drawing.Size(917, 30);
             this.txtEntrada.TabIndex = 17;
             // 
-            // button1
+            // btnOrdenar
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Modelo.Properties.Resources.close;
-            this.button1.Location = new System.Drawing.Point(850, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 80);
-            this.button1.TabIndex = 18;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnOrdenar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrdenar.Location = new System.Drawing.Point(182, 294);
+            this.btnOrdenar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnOrdenar.Name = "btnOrdenar";
+            this.btnOrdenar.Size = new System.Drawing.Size(105, 44);
+            this.btnOrdenar.TabIndex = 18;
+            this.btnOrdenar.Text = "Ordenar";
+            this.btnOrdenar.UseVisualStyleBackColor = true;
+            this.btnOrdenar.Click += new System.EventHandler(this.BtnOrdenar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Location = new System.Drawing.Point(317, 294);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(105, 44);
+            this.btnBuscar.TabIndex = 19;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
+            // btnBuscaBinaria
+            // 
+            this.btnBuscaBinaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscaBinaria.Location = new System.Drawing.Point(455, 294);
+            this.btnBuscaBinaria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscaBinaria.Name = "btnBuscaBinaria";
+            this.btnBuscaBinaria.Size = new System.Drawing.Size(129, 44);
+            this.btnBuscaBinaria.TabIndex = 20;
+            this.btnBuscaBinaria.Text = "Busca Binaria";
+            this.btnBuscaBinaria.UseVisualStyleBackColor = true;
+            this.btnBuscaBinaria.Click += new System.EventHandler(this.BtnBuscaBinaria_Click);
             // 
             // FrmVetor
             // 
@@ -136,6 +175,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(968, 586);
+            this.Controls.Add(this.btnBuscaBinaria);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnOrdenar);
             this.Controls.Add(this.txtEntrada);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCalcular);
@@ -146,6 +188,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmVetor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FrmVetor_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -162,5 +205,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtEntrada;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOrdenar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnBuscaBinaria;
     }
 }
